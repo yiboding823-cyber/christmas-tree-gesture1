@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/handgesture.tsx","./src/components/scene.tsx","./src/components/tree.tsx","./src/components/ui.tsx"],"errors":true,"version":"5.9.3"}
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/handgesture.tsx","./src/components/scene.tsx","./src/components/tree.tsx","./src/components/ui.tsx"],"version":"5.9.3"}
