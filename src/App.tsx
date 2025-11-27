@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Leva } from 'leva'
+import { Loader } from '@react-three/drei'
 import { Scene } from './components/Scene'
 import { UI } from './components/UI'
 import { HandGesture } from './components/HandGesture'
@@ -25,14 +26,17 @@ function App() {
             <Leva collapsed={true} />
             <HandGesture onGestureChange={handleGestureChange} />
             <UI onSetState={handleButtonClick} currentState={morphState} />
-            <Canvas
-                shadows
-                dpr={[1, 2]}
-                camera={{ position: [0, 2, 10], fov: 45 }}
-                gl={{ antialias: false, stencil: false, alpha: false }}
-            >
-                <Scene morphProgress={morphProgress} />
-            </Canvas>
+            <Suspense fallback={null}>
+                <Canvas
+                    shadows
+                    dpr={[1, 2]}
+                    camera={{ position: [0, 2, 10], fov: 45 }}
+                    gl={{ antialias: false, stencil: false, alpha: false }}
+                >
+                    <Scene morphProgress={morphProgress} />
+                </Canvas>
+            </Suspense>
+            <Loader />
         </>
     )
 }
